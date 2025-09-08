@@ -24,21 +24,11 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".highscore").textContent = highScore;
     }
 
-    // when guess is too high
-  } else if (guessNumber > randomNumber) {
+    // when guess is wrong
+  } else if (guessNumber !== randomNumber) {
     if (score > 1) {
-      document.querySelector(".message").textContent = "Too High";
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      document.querySelector(".message").textContent = "You Lost The Game";
-      document.querySelector(".score").textContent = 0;
-    }
-
-    //when guess is too low
-  } else if (guessNumber < randomNumber) {
-    if (score > 1) {
-      document.querySelector(".message").textContent = "Too Low";
+      document.querySelector(".message").textContent =
+        guessNumber > randomNumber ? "Too High" : "Too Low";
       score--;
       document.querySelector(".score").textContent = score;
     } else {
@@ -47,6 +37,29 @@ document.querySelector(".check").addEventListener("click", function () {
     }
   }
 });
+
+// when guess is too high
+// } else if (guessNumber > randomNumber) {
+//   if (score > 1) {
+//     document.querySelector(".message").textContent = "Too High";
+//     score--;
+//     document.querySelector(".score").textContent = score;
+//   } else {
+//     document.querySelector(".message").textContent = "You Lost The Game";
+//     document.querySelector(".score").textContent = 0;
+//   }
+
+//   //when guess is too low
+// } else if (guessNumber < randomNumber) {
+//   if (score > 1) {
+//     document.querySelector(".message").textContent = "Too Low";
+//     score--;
+//     document.querySelector(".score").textContent = score;
+//   } else {
+//     document.querySelector(".message").textContent = "You Lost The Game";
+//     document.querySelector(".score").textContent = 0;
+//   }
+// }
 
 // rest btn
 document.querySelector(".again").addEventListener("click", function () {
@@ -58,4 +71,5 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".score").textContent = score;
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "black";
+  document.querySelector(".number").style.width = "15rem";
 });
