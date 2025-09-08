@@ -4,18 +4,118 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess My Number</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: "Press Start 2P", monospace, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      header {
+        position: relative;
+        margin: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin: 20px 0;
+      }
+
+      .between {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 0.8rem;
+      }
+
+      .again {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        font-family: inherit;
+        border: none;
+        background: white;
+        color: black;
+        cursor: pointer;
+      }
+
+      .number {
+        font-size: 3rem;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        color: black;
+        width: 80px;
+        border-radius: 5px;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        margin-top: 30px;
+      }
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .guess {
+        width: 100px;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-family: inherit;
+        text-align: center;
+      }
+
+      .check {
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-family: inherit;
+        border: none;
+        cursor: pointer;
+        background: white;
+        color: black;
+      }
+
+      .message {
+        margin: 20px 0;
+        font-size: 1rem;
+      }
+
+      .label-score,
+      .label-highscore {
+        margin: 10px 0;
+        font-size: 1rem;
+      }
+    </style>
+
+    <!-- Retro pixel font from Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <h1>Guess My Number!</h1>
       <p class="between">(Between 1 and 20)</p>
-      <button class="bun again"></button>
+      <button class="again">Again!</button>
       <div class="number">?</div>
     </header>
     <main>
       <section class="left">
         <input type="number" class="guess" />
-        <button class="btn check">Check!</button>
+        <button class="check">Check!</button>
       </section>
       <section class="right">
         <p class="message">Start guessing...</p>
